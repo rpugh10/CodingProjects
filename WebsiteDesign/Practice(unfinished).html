@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+                background-color: lime;
+            }
+            .heading{
+                text-align: center;
+                color:yellow;
+                background-color:green;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+            .container{
+                display: flex;
+                justify-content: space-between;
+                padding: 20px;
+               padding: 20px;
+            }
+
+            .leftSide, .rightSide{
+                width: 20%;
+                font-weight: bold;
+            }
+
+            .leftSide{
+                color:red;
+                text-align: left;
+            }
+
+            .rightSide{
+                color:blue;
+                text-align: right;
+            }
+
+           .table-container{
+            flex: 1;
+            display:flex;
+            justify-content: center;
+           }
+
+           table{
+            width:60%;
+            border-collapse: collapse;
+            background-color: lightblue;
+            border: 1px solid black;    
+           }
+
+           th{
+            background-color: lightblue;
+            padding: 10px;
+            border: 1px solid black;
+           }
+
+           td{
+            text-align: center;
+            padding: 10px;  
+            border: 1px solid black;
+           }
+            
+        </style>
+    </head>
+    <body>
+       <div class="heading">
+        <h3>Quiz 1 Website Programming - HTML</h3>
+       </div> 
+
+       <div class="container">
+
+        <div class="leftSide">
+            <p>Name<br></p>
+            <p>Student ID<br></p>
+            <p>Department</p>
+        </div>
+
+       <div class="table-container">
+        <table>
+            <tr>
+                <th rowspan="2"></th>
+                <th colspan="2">Average</th>
+                <th rowspan="2">Red eyes</th>
+                
+            </tr>
+            <tr>
+                <td><b>height</b></td>
+                <td><b>weight</b></td>
+            </tr>
+            <tr>
+                <td><b>Males</b></td>
+                <td>1.9</td>
+                <td>0.003</td>
+                <td>40%</td>
+            </tr>
+            <tr>
+                <td><b>Females</b></td>
+                <td>1.7</td>
+                <td>0.002</td>
+                <td>43%</td>
+            </tr>
+        </table>
+        </div>
+        <div class="rightSide">
+            <p>Home City<br></p>
+            <p>Home Country<br></p>
+            <p>Contact #</p>
+    </div>
+    </body>
+</html>
