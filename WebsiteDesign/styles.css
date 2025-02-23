@@ -1,37 +1,123 @@
-.header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    background-color: white; 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.title{
-    text-align: center;
-    font-size: 40px;
-    font-family: 'Times New Roman', Times, serif;
-    position: absolute;
+body{
+    background-color: beige;
 }
 
-.bag{
-    position: absolute;
-    right: 20px;
-    word-spacing: 20px;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-.logo{
-    width: 100px;
-    margin-right: auto;
-}
-
-.shop{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+img{
     width: 100%;
+   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
 }
 
-.mens{
-    padding-right: 20px;
+.container{
+    border: 20px solid white;
+    padding: 20px;
+    margin: 50px 400px;
+    background-color: white;
+    border-radius: 20px;
 }
+
+header h1{
+    font-family: 'Lobster', cursive;
+    margin-bottom: 20px;
+}
+
+#prep-time{
+    background-color: rgba(187, 18, 173, 0.2);
+    border-radius: 20px;
+    padding: 10px 30px;
+    margin: 10px 0;
+}
+
+
+#prep-time h3{
+    color: purple;
+    
+}
+
+h2{
+    color:orange;
+}
+
+#prep-time ul{
+    list-style-type: none;
+}
+
+#prep-time ul li::before{
+    content: "*";
+    color: purple;
+}
+
+ul{
+    list-style-position: outside;
+    padding-left: 20px;
+}
+
+ul li{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#ingredients ul{
+    padding-top: 20px;
+    list-style-type: none;
+}
+
+#ingredients ul li::before{
+    content: "*";
+    color: orange;
+}
+
+ol li::marker{
+    color:orange;
+}
+
+ol{
+    padding-left: 40px;
+    padding-top: 20px;
+}
+
+ol li{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+p{
+    padding-left: 40px;
+    padding-top: 20px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    border-bottom: 2px solid black;
+}
+
+td{
+    color:orange;
+}
+
+#instructions{
+    padding: 20px 20px;
+}
+
+#nutrition{
+    padding: 20px 20px;
+}
+
+#ingredients{
+    padding: 20px 20px;
+}
+
+table th{
+    padding: 10px;
+}
+
+
+
+
