@@ -4,46 +4,49 @@ public class Test{
   public static void main(String[] args)
   {
     Scanner scan = new Scanner(System.in);
-    System.out.println("How many objects do you want to store ");
-    int value = scan.nextInt();
+    System.out.println("How many animals do you want to create");
+    int num = scan.nextInt();
     scan.nextLine();
-    Vehicle[] vehicle = new Vehicle[value];
 
-    for(int i = 0; i < vehicle.length; i++)
+    Animal[] animal = new Animal[num];
+
+    for(int i = 0; i < animal.length; i++)
     {
-      System.out.println("Enter car or boat ");
+      System.out.println("Enter lion eagle or dolphin ");
       String input = scan.nextLine();
-      if(input.equalsIgnoreCase("Car"))
+      if(input.equalsIgnoreCase("lion"))
       {
-        System.out.println("Enter model ");
-        String model = scan.nextLine();
-        System.out.println("Enter year ");
-        int year = scan.nextInt();
-        scan.nextLine();
-        vehicle[i] = new Car(model, year);
+        System.out.println("Enter lions name ");
+        String name = scan.nextLine();
+        animal[i] = new Lion(name);
       }
-      else if(input.equalsIgnoreCase("Boat"))
+      else if(input.equalsIgnoreCase("eagle"))
       {
-        System.out.println("Enter model ");
-        String model = scan.nextLine();
-        System.out.println("Enter year ");
-        int year = scan.nextInt();
-        scan.nextLine();
-        vehicle[i] = new Boat(model, year);
+        System.out.println("Enter eagles name ");
+        String name = scan.nextLine();
+        animal[i] = new Eagle(name);
+      }
+      else if(input.equalsIgnoreCase("dolphin"))
+      {
+        System.out.println("Enter the dolphins name ");
+        String name = scan.nextLine();
+        animal[i] = new Dolphin(name);
       }
       else
       System.out.println("Invalid input");
     }
 
-    for(int i = 0; i < vehicle.length; i++)
+    for(int i = 0; i < animal.length; i++)
     {
-      vehicle[i].move();
+      animal[i].makeSound();
 
-      if(vehicle[i] instanceof Fuelable)
+      if(animal[i] instanceof Swimmable)
       {
-        ((Fuelable) vehicle[i]).refuel(50);
+        ((Swimmable) animal[i]).swim();
       }
     }
   }
+
+
 }
 
