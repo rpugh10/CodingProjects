@@ -1,26 +1,34 @@
-import java.util.Scanner;
-import java.util.Stack;
+
+import java.util.*;
 public class Test{
     
   public static void main(String[] args)
   {
-    Stack<Character> reverseString = new Stack<>();
+    Stack<Integer> reverseArray = new Stack<>();
     Scanner scan = new Scanner(System.in);
-    
-    System.out.println("Enter a sentence ");
-    String input= scan.nextLine();
 
-    for(int i = 0; i < input.length(); i++)
+    System.out.println("How big do you want the array ");
+    int input = scan.nextInt();
+
+    int[] num = new int[input];
+
+    for(int i = 0; i < num.length; i ++)
     {
-        reverseString.push((input.charAt(i)));
+      System.out.println("Enter numbers ");
+      num[i] = scan.nextInt();
     }
 
-    while(!reverseString.isEmpty())
+    for(int i = 0; i < num.length; i++)
     {
-      System.out.print(reverseString.pop());
+      reverseArray.push(num[i]);
     }
 
+    System.out.println(reverseArray);
 
+    for(int i = 0; i < num.length; i++)
+    {
+      System.out.print(reverseArray.pop());
+    }
   }
 }
 
