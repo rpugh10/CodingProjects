@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Radial Gradients</title>
+        <style>
+             body{
+                background-color: grey;
+            }
+
+            h1{
+                text-align: center;
+                margin-top: 30px;
+                color:white;
+            }
+
+            .container{
+                text-align: center;
+                color: white;
+            }
+
+            .boxes div{
+                width: 300px;
+                height:100px;
+                font-weight: bold;
+                display: block;
+                border-radius: 15px;
+                margin: 15px auto;
+                box-shadow: 2px 2px 2px rgba(204, 43, 236, 0.4);
+                line-height: 100px;
+            }
+
+            .box1{
+                background-image: radial-gradient(pink, lightblue, beige);
+            }
+
+            .box2{
+                background-image: radial-gradient(circle, red, blue,green);
+            }
+
+            .box3{
+                color:black;
+                background-image: radial-gradient(closest-side at 60% 55%, red, yellow,black);
+            }
+
+            .box4{
+                color:black;
+                background-image: radial-gradient(farthest-side at 65% 50%, green, yellow, orange);
+            }
+
+            .box5{
+                color:black;
+                background-image: repeating-radial-gradient(farthest-corner at 50% 65%, blue, yellow,black);
+            }
+           
+        </style>
+    </head>
+    <body>
+        <h1>These are examples of Radial Gradients</h1>
+        <div class="container">
+            <div class="boxes">
+                <div class="box1">Ellipse</div>
+                <div class="box2">Circle</div>
+                <div class="box3">Closest-Side at 60%, 55%</div>
+                <div class="box4">Farthest-Side at 65%, 50%</div>
+                <div class="box5">Farthest-Corner at 50%, 65%</div>
+            </div>
+        </div>
+    </body>
+</html>

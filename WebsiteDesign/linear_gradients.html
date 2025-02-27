@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Linear Gradients</title>
+        <style>
+            body{
+                background-color: grey;
+            }
+            
+            h1{
+                text-align: center;
+                margin-top: 30px;
+                color:white;
+            }
+
+            .container{
+                text-align: center;
+                color: white;
+            }
+
+            .boxes div{
+                width: 300px;
+                height:100px;
+                font-weight: bold;
+                display: block;
+                border-radius: 15px;
+                margin: 15px auto;
+                box-shadow: 2px 2px 2px rgba(43, 182, 236, 0.4);
+                line-height: 100px;
+            }
+
+            .box1{
+                background: linear-gradient(to bottom, red, blue);
+            }
+             
+            .box2{
+                background: linear-gradient(to right, blue, green);
+            }
+
+            .box3{
+                background: linear-gradient(to top, pink, purple);
+            }
+
+            .box4{
+                background: linear-gradient(to left, yellow, orange);
+            }
+
+            .box5{
+                background: linear-gradient(to bottom left, black, yellow);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>These are examples of Linear Gradients</h1>
+        <div class="container">
+            <div class="boxes">
+                <div class="box1">Top to Bottom</div>
+                <div class="box2">Left to Right</div>
+                <div class="box3">Bottom to Top</div>
+                <div class="box4">Right to Left</div>
+                <div class="box5">Diagonal</div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Conic Gradients</title>
+        <style>
+             body{
+                background-color: grey;
+            }
+            
+            h1{
+                text-align: center;
+                margin-top: 30px;
+                color:white;
+            }
+
+            .container{
+                text-align: center;
+                color: white;
+            }
+
+            .boxes div{
+                width: 300px;
+                height:100px;
+                font-weight: bold;
+                display: block;
+                border-radius: 15px;
+                margin: 15px auto;
+                box-shadow: 2px 2px 2px rgb(43, 181, 236);
+                line-height: 100px;
+            }
+
+            .box1{
+                background-image: conic-gradient(blue 60deg, pink 90deg, beige 210deg);
+                color:black
+            }
+             
+            .box2{
+                background-image: conic-gradient(red 80deg, blue 100deg, green 180deg);
+            }
+
+            .box3{
+                background-image: conic-gradient(lightblue 30deg, pink 150deg, purple 180deg);
+                color:black;
+            }
+
+            .box4{
+                background: conic-gradient(red 100deg, yellow 100deg, blue 160deg);
+            }
+
+            .box5{
+                background: conic-gradient(lightblue 70deg, black 100deg, lightgreen 190deg);
+                color:black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>These are examples of Conic Gradients</h1>
+        <div class="container">
+            <div class="boxes">
+                <div class="box1">Blue 60deg, Pink 90deg, Beige 210deg</div>
+                <div class="box2">Red 80deg, Blue 100deg, Green 180deg</div>
+                <div class="box3">LBlue 30deg, Pink 150deg, Purple 180deg</div>
+                <div class="box4">Red 100deg, Yellow 100deg, Blue 160deg</div>
+                <div class="box5">LBlue 70deg, black 100deg, Lgreen 190deg</div>
+            </div>
+        </div>
+    </body>
+</html>
