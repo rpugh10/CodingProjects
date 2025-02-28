@@ -1,0 +1,86 @@
+html, body{
+    height: 100%;
+}
+
+body{
+    margin: 0;
+    padding:0; 
+    border: 2px solid orange;
+}
+
+h3{
+    margin: 0;
+    text-align: center;
+    color: yellow;
+    padding: 2%;
+    background-color: green;
+}
+
+.section{
+    background-color: yellowgreen;
+    margin: 0;
+    text-align: center;
+    padding: 14%;
+}
+
+p{
+    margin:0; 
+}
+
+.left-side, .right-side, table{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.left-side{
+    padding-right: 20px;
+    color:red;
+    font-weight: bold;
+    text-align: left;
+    width: 20%
+}
+
+table{
+    width: auto;
+    height: 20%;
+    background-color: lightblue;
+    text-align: center;
+}
+
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+.right-side{
+    padding-left: 20px;
+    color: blue;
+    font-weight: bold;
+    text-align: right;
+    width: 20%;
+}
+
+.footer{
+    text-align: center;
+}
+
+.left, img, .right{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 20px;
+}
+
+img{
+    width: 10%;
+}
+
+.left{
+    color:orange;
+    font-weight: bold;
+}
+
+.right{
+    color: green;
+    font-weight: bold;
+}
