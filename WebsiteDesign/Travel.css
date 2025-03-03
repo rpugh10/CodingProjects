@@ -1,0 +1,190 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: lightgray;
+}
+
+.container{
+    background-image: url('../images/VBackground.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    margin: 10px;
+    text-align: center;
+    border-radius: 10px;
+    display: flow-root;
+}
+
+.container h4{
+    font-weight: normal;
+    float: left;
+}
+
+.container h4, .container ul, .container p{
+    display: inline-block;
+    padding: 10px;
+}
+
+.container ul{
+    list-style-type: none;
+}
+
+.container li{
+    display: inline-block;
+    padding: 5px;
+    font-weight: bold;
+}
+
+li:hover{
+    background-color: yellow;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.user{
+    float: right;
+    color: black;
+    font-weight: bold;
+}
+
+.user:hover{
+    background-color: black;
+    color:white;
+    border-radius: 10px;
+}
+
+.container h1{
+    font-size: 3cm;
+}
+
+.container .img1, .container .im2, .container .caption{
+    display: inline-block;
+}
+
+.img1{
+    padding-bottom: 10px;
+    padding-left: 10px;
+    height: 150px;
+    border-radius: 10px;
+    float: left;
+}
+
+.img2{
+    padding-bottom: 10px;
+    padding-right: 10px;
+    height: 150px;
+    border-radius: 10px;
+    float:right;
+}
+
+.caption{
+    margin-top: 70px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.check-in{
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.location, .room, .check, .check-out{
+    display: inline-block;
+    padding: 20px;
+}
+
+.check-in p{
+    text-decoration: underline;
+}
+
+
+
+.category{
+    margin: 10px;
+    display: flow-root;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.boxes{
+    display: inline-block;
+    margin: 50px;
+}
+
+.box1, .box2, .box3, .box4, .box5{
+    display: inline-block;
+}
+
+.boxes .top-rated{
+    background-color: beige;
+    border-radius: 15px;
+    padding: 15px;
+    float: right;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.boxes .Trending{
+    background-color: pink;
+    border-radius: 15px;
+    padding: 15px;
+    float: right;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.boxes .guest-fav{
+    background-color: aqua;
+    border-radius: 15px;
+    padding: 15px;
+    float: right;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.boxes img{
+    height: 150px;
+}
+
+.box1{
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.box2{
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.box3{
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.box4{
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.box5{
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.category h1, .category .description{
+    padding: 15px;
+}
+
+.boxes h3, .boxes p{
+    padding:0 0 5px 5px;
+}
