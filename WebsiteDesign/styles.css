@@ -1,121 +1,103 @@
 *{
-    margin: 0;
-    padding: 0;
+    padding:0;
+    margin:0;
     box-sizing: border-box;
 }
 
 body{
-    background-color: beige;
+    background-color: lightgray;
 }
 
-img{
-    width: 100%;
-   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-    border-radius: 20px;
+#header{
+    background-color: black;
+    color: white;
+    text-align: center;
+    display: flow-root;
+    line-height: 100px;
 }
 
-.container{
-    border: 20px solid white;
-    padding: 20px;
-    margin: 50px 400px;
+
+
+#header li{
+    display: inline;
+    margin-right: 10px;
+}
+
+#header img{
+    height: auto;
+    width: 5%;
+    float: left;
+    margin-left: 190px;
+    margin-top: 5px;
+}
+
+#header .title{
+ display: inline-block;
+}
+
+#header ul{
+    float: right;
+}
+
+#header li:hover{
+    text-decoration: underline;
+    color: lightblue;
+}
+
+#header li:active{
+    color:blue;
+}
+
+.boxes{
+    box-shadow: 5px 5px 5px 5px rgba(190, 171, 63, 0.4);
     background-color: white;
-    border-radius: 20px;
+    padding: 20px;
+    width: calc(33.333% - 40px); 
+    margin: 20px;
+    text-align: center;
+    float: left;
+    border-radius: 10px;
 }
 
-header h1{
-    font-family: 'Lobster', cursive;
-    margin-bottom: 20px;
+.boxes img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
 }
 
-#prep-time{
-    background-color: rgba(187, 18, 173, 0.2);
-    border-radius: 20px;
-    padding: 10px 30px;
-    margin: 10px 0;
+.boxes ul{
+    list-style: none;
+    margin-bottom: 10px;
+    margin-top: 40px;;
 }
 
-
-#prep-time h3{
-    color: purple;
-    
-}
-
-h2{
-    color:orange;
-}
-
-#prep-time ul{
-    list-style-type: none;
-}
-
-#prep-time ul li::before{
-    content: "*";
-    color: purple;
-}
-
-ul{
-    list-style-position: outside;
-    padding-left: 20px;
-}
-
-ul li{
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-#ingredients ul{
-    padding-top: 20px;
-    list-style-type: none;
-}
-
-#ingredients ul li::before{
-    content: "*";
-    color: orange;
-}
-
-ol li::marker{
-    color:orange;
-}
-
-ol{
-    padding-left: 40px;
-    padding-top: 20px;
-}
-
-ol li{
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-p{
-    padding-left: 40px;
-    padding-top: 20px;
-}
-
-table{
-    width: 100%;
-    border-collapse: collapse;
-    border-bottom: 2px solid black;
-}
-
-td{
-    color:orange;
-}
-
-#instructions{
-    padding: 20px 20px;
-}
-
-#nutrition{
-    padding: 20px 20px;
-}
-
-#ingredients{
-    padding: 20px 20px;
-}
-
-table th{
+.boxes li{
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    border-radius: 15px;
     padding: 10px;
+}
+
+.boxes li:hover{
+    color: lightblue;
+}
+
+.boxes li:active{
+    color:blue;
+}
+
+.boxes button{
+    background-color: rgb(32, 212, 32);
+    border-radius: 15px;
+    padding: 15px;
+    font-weight: bold;
+    margin: 5px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.4);
+}
+
+.boxes button:active{
+    color: blue;
 }
 
 
