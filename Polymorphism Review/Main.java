@@ -15,18 +15,24 @@ public class Main
             System.out.println(pets[i]);
         }
 
-        int compare = ((Dog)pets[0]).compareTo(pets[3]);
+       System.out.println("Enter what objects you want to compare ");
+       int ob1 = scan.nextInt();
+       int ob2 = scan.nextInt();
 
-        if(compare == -1)
-        {
-            System.out.println("Small has a higher preference level");
-        }
-        else if(compare == 1)
-        {
-            System.out.println("Black has a higher preference level");
-        }
-        else 
-        System.out.println("They both have equal preference ");
+       System.out.println("Comparing object " + ob1 + " to " + ob2);
+
+       int compare = ((Dog)pets[ob1]).compareTo(pets[ob2]);
+
+       if(compare == -1)
+       {
+            System.out.println("Object " + ob2 + " is bigger");
+       }
+       else if(compare == 1)
+       {
+            System.out.println("Object " + ob1 + " is bigger" );
+       }
+       else 
+       System.out.println("They are both the same");
 
     }
 }
