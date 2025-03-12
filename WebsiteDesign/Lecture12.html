@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function DisplayBlock(){
+                document.getElementById("TwoImage").style.display="block";
+            }
+        </script>
+    </head>
+    <body>
+        <h3>Lecture 12: Practice</h3>
+        <h4>Part 1: Basic HTML change text</h4>
+        <p id="TextChange">This is first javascript example</p>
+        <button type="button" onclick='document.getElementById("TextChange").innerHTML="Hello Class!"'>Button</button>
+        
+        <h5>Part 2: Swapping image</h5>
+        <button type="button" onclick='document.getElementById("myImg").src="https://www.tru.ca/__shared/assets/wolfpack-logo-colour-rgb40429.png "'>TRU WolfPack Orange</button>
+        <img id="myImg" src="https://www.tru.ca/__shared/assets/wolfpack-logo-colour-rgb40429.png" style="width: 200px">
+        <button type="button" onclick='document.getElementById("myImg").src="https://www.tru.ca/__shared/assets/Logos-06_-_Don_t_Change_Colours37277.png"'>TRU WolfPack Multicolor</button>
+
+        <h4>Part 3: changing font size on click</h4>
+        <p id="FontChange">This text size will be increased if click on below button</p>
+        <button type="button" onclick='document.getElementById("FontChange").style.fontSize="25px"'>Click here to increase size</button>
+        <button type="button" onclick='document.getElementById("FontChange").style.fontSize="12px"'>Click here to reduce size</button>
+
+        <h4>Part 4: Hide content</h4>
+        <p id="HideText"> This text will be hidden when click on button below</p>
+        <button type="button" onclick='document.getElementById("HideText").style.display="none"'>Click here to hide text</button>
+
+        <h4>Part 5: Display Element</h4>
+        <p id="TwoImage" style="display: none;">
+            <img src="https://www.tru.ca/__shared/assets/Logos-01_-TRU_Logo_Left_900px37269.png" style="float: left; width: 100px; height: 100px;">
+            <img src="https://faculty.tru.ca/lgosselin/biol302/posterfiles/TRU%20logo%20vert%20trnsprnt.png" style="float: right; width: 100px; height: 100px;">
+        </p>
+        <button type="button" onclick='document.getElementById("TwoImage").style.display="block"'>Click to display 2 images block</button>
+
+        <h4>Part 6: Display Element based on user defined function</h4>
+        <button type="button" onclick='DisplayBlock()'>Click to display 2 images block using user defined</button>
+
+        <h4>Part 7: Sum of two numbers</h4>
+        <h6>The sum of 12 + 23 is: <script>document.write(12 + 23)</script></h6> 
+        <h6>The sum of 12 - 23 is: <script>document.write(12 - 23)</script></h6> 
+        <h6>The sum of 12 * 23 is: <script>document.write(12 * 23)</script></h6> 
+        <h6>The sum of 12 / 23 is: <script>document.write(12 / 23)</script></h6> 
+        <script>window.alert(12 + 23)</script>
+
+        <h4>Part 8: Calling browser short keys</h4>
+
+        <button type="button" onclick="window.print()">Click to print page</button>
+        
+        <h4>Javascript variables</h4>
+        <p id="VariableNumber">Adding numbers</p>
+        <script>let a =10; let b =20; let c =  30; let d = a + b + c;
+            document.getElementById("VariableNumber").innerHTML="The sum of" + a + "+"+ b + "+" + c + "=" + d;
+        </script>
+        
+    </body> 
+</html>
