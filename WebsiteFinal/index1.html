@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Patched</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="http://i.postimg.cc/wjywQV1p/IMG-3129.png">
+<script>
+    function showAlert(item)
+    {
+        alert("The function " + item +" doesn't work yet.");
+    }
+
+    var countDownDate = new Date("April 15, 2025 15:37:25").getTime(); // Fixed date format
+
+var x = setInterval(function () {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+        days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "EXPIRED";
+    }
+}, 1000);
+
+let lastModified = new Date(document.lastModified);
+document.getElementById("lastUpdated").innerHTML = "Last Updated: " + lastModified.toLocaleString();
+</script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="container flex">
+            <img src="https://i.postimg.cc/cHnyhjLQ/Untitled-design.png" alt="TwoPatchedLogo">
+            <h1 class="logo">TwoPatched</h1>
+            <nav>
+                <ul>
+                    <li onclick="showAlert('Search')">SEARCH</li>
+                    <li onclick="showAlert('New Arrivals')">NEW ARRIVALS</li>
+                    <li onclick="showAlert('Account')">ACCOUNT</li>
+                    <li onclick="showAlert('Bag')">BAG</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <section class="showcase">
+        <div class="container grid">
+            <div class="hoodie">
+                <h1>TwoPatched Hoodie</h1>
+                <img src="https://i.postimg.cc/G3KgLtWZ/IMG-3136.jpg" alt="TwoPatched Hoodie">
+                <p>Price: $49.99</p>
+                <ul>
+                    <li>S</li>
+                    <li>M</li>
+                    <li>L</li>
+                    <li>XL</li>
+                </ul>
+                <button>ADD TO CART</button>
+            </div>
+                <div class="Pants">
+                    <h1>TwoPatched Pants</h1>
+                    <img src="https://i.postimg.cc/qM7bz00g/IMG-3137.jpg" alt="TwoPatched Pants">
+                    <p>Price: $49.99</p>
+                    <ul>
+                        <li>S</li>
+                        <li>M</li>
+                        <li>L</li>
+                        <li>XL</li>
+                    </ul>
+                    <button>ADD TO CART</button>
+                </div>
+
+                <div class="Shirt">
+                    <h1>TwoPatched Shirt</h1>
+                    <img src="https://i.postimg.cc/FHgPSCYn/Real-Two-Patched-Shirt.png" alt="TwoPatched Shirt">
+                    <p>Price: $49.99</p>
+                    <ul>
+                        <li>S</li>
+                        <li>M</li>
+                        <li>L</li>
+                        <li>XL</li>
+                    </ul>
+                    <button>ADD TO CART</button>
+                </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <div class="about-text">
+                <h1>About Us</h1>
+                <p>TwoPatched is a clothing brand that was founded in 2020 in Quesnel, British Columbia</p>
+                <p>Our goal is to provide high quality clothing for a reasonable price</p>
+                <h2>Countdown To New Products!</h2>
+                <p id="countdown"></p>
+            </div>
+            <div class="about-video">
+                
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p id="lastUpdated">Last Updated: <span></span></p>
+            <table>
+                <tr>
+                    <th>SETTINGS</th>
+                    <th><a href ="mailto:jpugh15@yahoo.com">CONTACT</a></th>
+                   <th> <a href="https://www.instagram.com/twopatched/" target ="_blank">SOCIALS</a></th>
+            </tr>
+            </table>
+        </div>
+    </footer>
+</body>
+</html>
