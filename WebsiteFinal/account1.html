@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Patched</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="http://i.postimg.cc/wjywQV1p/IMG-3129.png">
+</head>
+<body>
+    <div class="navbar">
+        <div class="container flex">
+            <img src="https://i.postimg.cc/cHnyhjLQ/Untitled-design.png" alt="TwoPatchedLogo">
+            <h1 class="logo">TwoPatched</h1>
+            <nav>
+                <ul>
+                    <li onclick="myFunction()">SEARCH</li>
+                    <a href="comingSoon.html"><li>COMING SOON</li></a>
+                    <li onclick="showAlert('Bag')">BAG</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <section class="about">
+        <div class="containerAccount">
+            <div class="about-text">
+                <h1 class="accountHeading">TwoPatched</h1>
+                <h1 class="leftSide">Log In</h1>
+                <p class="leftSide">Enter your email and we'll send you a login code</p>
+                <form class="leftSide">
+                    <input type="email" name="email" placeholder="Email" required>
+                    <button type="submit">Send Code</button>
+                </form>
+                <p class="leftSide">Privacy</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="showcase">
+        <div class="container">
+            <h1>Check out some of our products!</h1>
+        </div>
+        <div class="container grid">
+            <div class="hoodie">
+                <a href="index.html"><img src="https://i.postimg.cc/G3KgLtWZ/IMG-3136.jpg" alt="TwoPatched Hoodie"></a>
+            </div>
+
+            <div class="Pants">
+                <a href="index.html"><img src="https://i.postimg.cc/qM7bz00g/IMG-3137.jpg" alt="TwoPatched Pants"></a>
+            </div>
+
+            <div class="Shirt">
+                <a href="index.html"><img src="https://i.postimg.cc/FHgPSCYn/Real-Two-Patched-Shirt.png" alt="TwoPatched Shirt"></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <table>
+                <tr>
+                    <th><a href="index.html">HOME</a></th>
+                    <th><a href ="mailto:jpugh15@yahoo.com">CONTACT</a></th>
+                   <th> <a href="https://www.instagram.com/twopatched/" target ="_blank">SOCIALS</a></th>
+            </tr>
+            </table>
+            <p>Last Updated: <span id="lastUpdated"></span></p>
+        </div>
+    </footer>
+    <script>
+        function showAlert(item)
+        {
+            alert("The function " + item +" doesn't work yet.");
+        }
+
+        let text = document.lastModified;
+        document.getElementById("lastUpdated").innerHTML = text;
+
+        function myFunction(){
+        let item = prompt("What are you looking for?");
+    }
+    </script>
+</body>
+</html>
