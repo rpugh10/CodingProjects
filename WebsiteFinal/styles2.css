@@ -174,7 +174,7 @@ background-color: #3E362E;
     float: left;
 }
 
-.about .qPhoto{
+.about .justinPic{
     width: 30%;
     height: auto;
     border-radius: 40px;
@@ -365,4 +365,14 @@ button:hover{
         width: 100%;
         height: auto;
     }
+
+    .justinPic{
+        display: none;
+    }
+
+    .quesnelPic{
+        display: none;
+    }
+
+
 }
