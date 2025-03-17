@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Patched</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="http://i.postimg.cc/wjywQV1p/IMG-3129.png">
+</head>
+<body>
+    <div class="navbar">
+        <div class="container flex">
+            <img src="https://i.postimg.cc/cHnyhjLQ/Untitled-design.png" alt="TwoPatchedLogo">
+            <h1 class="logo">TwoPatched</h1>
+            <nav>
+                <ul>
+                    <li onclick="showAlert('Search')">SEARCH</li>
+                    <a href="comingSoon.html"><li>COMING SOON</li></a>
+                    <li onclick="showAlert('Bag')">BAG</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    
+    <footer class="footer">
+        <div class="container">
+            <table>
+                <tr>
+                    <th><a href="index.html">HOME</a></th>
+                    <th><a href ="mailto:jpugh15@yahoo.com">CONTACT</a></th>
+                   <th> <a href="https://www.instagram.com/twopatched/" target ="_blank">SOCIALS</a></th>
+            </tr>
+            </table>
+            <p>Last Updated: <span id="lastUpdated"></span></p>
+        </div>
+    </footer>
+    <script>
+        function showAlert(item)
+        {
+            alert("The function " + item +" doesn't work yet.");
+        }
+
+        let text = document.lastModified;
+        document.getElementById("lastUpdated").innerHTML = text;
+    </script>
+</body>
+</html>
