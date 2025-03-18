@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Patched</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="http://i.postimg.cc/wjywQV1p/IMG-3129.png">
+</head>
+<body>
+    <div class="navbar">
+        <div class="container flex">
+            <img src="https://i.postimg.cc/cHnyhjLQ/Untitled-design.png" alt="TwoPatchedLogo">
+            <h1 class="logo">TwoPatched</h1>
+            <nav>
+                <ul>
+                    <li onclick="myFunction()">SEARCH</li>
+                    <a href="account.html"><li>ACCOUNT</li></a>
+                    <a href="bag.html"><li>BAG</li></a>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="showcase">
+        <div class="container grid">
+            <h1>Coming Soon</h1>
+        </div>
+    </div>
+
+    <section class="showcase">
+        <div class="container grid">
+            <div class="hoodie">
+                <img src="https://i.postimg.cc/fWrjR54m/h1.png" alt="TwoPatched Hoodie">
+            </div>
+            <div class="Pants">
+                <img src="https://i.postimg.cc/521gF3g0/p1.png" alt="TwoPatched Pants">
+            </div>
+            <div class="Shirt">
+                <img src="https://i.postimg.cc/8CzbZzqg/s1.png" alt="TwoPatched Shirt">
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <div class="about-text">
+                <h1>Description Of Products</h1>
+                <p>Step up your comfort game with our TwoPatched Premium Sweatpants. Crafted from a soft cotton-blend fleece, these joggers offer the perfect balance of warmth and breathability. </p>
+                <p>The TwoPatched Signature Hoodie is your go-to for cozy, elevated style. Made from a heavyweight cotton fleece, it provides exceptional warmth and durability.</p>
+                <p>Designed for everyday wear, the TwoPatched Oversized Street Tee delivers a modern, laid-back vibe. Made from 100% premium cotton, this shirt offers a soft, breathable feel that keeps you comfortable all day.</p>
+               <h1>Countdown To New Products</h1>
+               <p id="countdown"></p>
+            </div>
+                
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="container">
+            <table>
+                <tr>
+                    <th><a href="index.html">HOME</a></th>
+                    <th><a href ="mailto:jpugh15@yahoo.com">CONTACT</a></th>
+                   <th> <a href="https://www.instagram.com/twopatched/" target ="_blank">SOCIALS</a></th>
+            </tr>
+            </table>
+            <p>Last Updated: <span id="lastUpdated"></span></p>
+        </div>
+    </footer>
+    <script>
+        function showAlert(item)
+        {
+            alert("The function " + item +" doesn't work yet.");
+        }
+
+        let text = document.lastModified;
+        document.getElementById("lastUpdated").innerHTML = text;
+
+        var countDownDate = new Date("April 15, 2025 15:37:25").getTime();
+    
+    var x = setInterval(function () {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+    
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+        document.getElementById("countdown").innerHTML =
+            days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+    
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("countdown").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+
+    function myFunction(){
+        let item = prompt("What are you looking for?");
+    }
+    </script>
+</body>
+</html>
