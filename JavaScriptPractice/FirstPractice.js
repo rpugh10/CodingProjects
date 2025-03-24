@@ -70,4 +70,16 @@ for(let i = 0; i < input; i++)
     }
 
 }
+
+document.getElementById("button6").onclick = function() {
+    let input = parseInt(prompt("How many numbers do you want to store: "));
+    const num = [];
+    
+    for (let i = 0; i < input; i++) {
+        let value = parseInt(prompt("Enter number: "));
+        num.push(value);
+    }
+
+    document.getElementById("demo4").innerHTML = "Printing array: " + num.join(", ");
+}
 };
