@@ -70,6 +70,7 @@ for(let i = 0; i < input; i++)
     }
 
 }
+};
 
 document.getElementById("button6").onclick = function() {
     let input = parseInt(prompt("How many numbers do you want to store: "));
@@ -82,4 +83,44 @@ document.getElementById("button6").onclick = function() {
 
     document.getElementById("demo4").innerHTML = "Printing array: " + num.join(", ");
 }
-};
+
+    document.getElementById("button7").onclick = function()
+    {
+        let name;
+        let age;
+        let city;
+        name = prompt("Enter your name ");
+        age = parseInt(prompt("Enter your age "));
+        city = prompt("Enter your city ");
+
+        let result = prompt("Your name is " + name + " age " + age + " city " + city);
+    }
+
+    document.getElementById("button8").onclick = function() {
+        let size = parseInt(prompt("How big do you want the star?"));
+    
+        for (let i = 0; i < size; i++) {
+            let row = ""; 
+            for (let j = 0; j < size - i; j++) {
+                row += "*"; 
+            }
+            console.log(row); 
+        }
+    }
+
+    document.getElementById("button9").onclick = function()
+    {
+        let size = parseInt(prompt("How big do you want the star "));
+        for(let i = 0; i < size; i++)
+        {
+            let row ="";
+            for(let j = 0; j <= i; j++ )
+            {
+                row +="*";
+            }
+            console.log(row);
+        }
+    }
+
+
+
