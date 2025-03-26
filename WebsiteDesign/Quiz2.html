@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Quiz 2</h1>
+    <h2>Question 1</h2>
+    <p id="demo"></p>
+    <h2>Question 2</h2>
+    <table border="1">
+        <tr>
+            <th>Courses</th>
+            <th>Grades</th>
+        </tr>
+        <tr>
+            <td id="courses"></td>
+            <td id="grades"></td>
+        </tr>
+        <tr>
+            <td >
+                <p id="failingGrade"></p>
+                <p id="gpa">GPA:</p>
+            </td>
+        </tr>
+    </table>
+     
+    </table>
+    <script>
+        const productName =["Apple", "Banana", "Orange", "Grapes", "Pineapple"];
+        const quantity =["5", "10", "15", "20", "25"];
+        const price = ["1.50", "0.50", "0.75", "2.00", "1.25"];
+        for(let i = 0; i < productName.length; i++){
+            document.getElementById("demo").innerHTML += "Product name: " + productName[i] + " " + " quantity: " + quantity[i] + " " + " price: " + price[i] + "<br>";
+        }
+
+
+
+
+        const currentCourses = ["COMP 1230", "COMP 2130", "COMP 2250", "COMP 2130", "COMP 2130"];
+        const grades =["A", "B"];
+        const failingGrade =["C", "D", "F"];
+        for(let i = 0; i < currentCourses.length; i++){
+            document.getElementById("courses").innerHTML += currentCourses[i] + " " +"<br>";
+        }
+        for( let i = 0; i < grades.length; i++){
+            document.getElementById("grades").innerHTML +=  grades[i]+ " " + "<br>";
+           if(grades[i] == "A" || grades[i] == "B")
+           {
+               document.getElementById("grades").style.color = "green";
+           }
+        }
+        for( let i = 0; i < failingGrade.length; i++){
+            document.getElementById("failingGrade").innerHTML += failingGrade[i]+ " " +"<br>";
+            if(failingGrade[i] == "C" || failingGrade[i] == "D" || failingGrade[i] == "F")
+            {
+                document.getElementById("failingGrade").style.color = "red";
+            }
+        }
+
+        let gpa = 0;
+        let total = 5;
+        for(let i = 0; i < grades.length; i++){
+            if(grades[i] == "A"){
+                gpa += 4;
+            }
+            else if(grades[i] == "B"){
+                gpa += 3;
+            }
+           
+        }
+        for(let i = 0; i < failingGrade.length; i++){
+            if(failingGrade[i] == "C"){
+                gpa += 2;
+            }
+            else if(failingGrade[i] == "D"){
+                gpa += 1;
+            }
+            else if(failingGrade[i] == "F"){
+                gpa += 0;
+            }
+        }
+        gpa = gpa / total;
+        document.getElementById("gpa").innerHTML += gpa;
+    </script>
+</body>
+</html>
