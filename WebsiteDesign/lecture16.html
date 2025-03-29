@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lecture 16: Javascript with forms integration</h1>
+        <input type="text" id="fname" required>
+        <input type="text" id="lname" required>
+        <button onclick="GetPostInfo()">Submit</button>
+        <p id="fnameTxt">OutPut</p>
+
+    <script>
+        function GetPostInfo(){
+        const inpObjFN = document.getElementById("fname");
+        const inpObjLN = document.getElementById("lname");
+        document.getElementById("fnameTxt").innerHTML = inpObjFN.value + " " + inpObjLN.value;
+    }
+    </script>
+
+    <h4>Part 2: Basic Math Calculator</h4>
+    <input type="number" id="num1" required><br>
+    <input type="number" id="num2" required><br>
+    <button onclick="AddNums()">Add</button>
+    <button onclick="SubNums()">Subtract</button>
+    <button onclick="MulNums()">Multiply</button>
+    <button onclick="DivNums()">Divide</button>
+    <button onclick="AddOperations()">All Operations</button>
+    <button onclick="SquareRoot()">Square Root</button>
+    <p id="AddOut">Adding</p>
+    <p id="SubOut">Subtracting</p>
+    <p id="MulOut">Multiplying</p>
+    <p id="DivOut">Dividing</p>
+    <p id="SqrtOut">Square Root</p>
+
+    <script>
+        function AddNums(){
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+            let sum = parseInt(num1) + parseInt(num2);
+            document.getElementById("AddOut").innerHTML = "Sum: " + sum;
+        }
+        function SubNums(){
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+            let sub = parseInt(num1) - parseInt(num2);
+            document.getElementById("SubOut").innerHTML = "Subtraction: " + sub;
+        }
+        function MulNums(){
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+            let mul = parseInt(num1) * parseInt(num2);
+            document.getElementById("MulOut").innerHTML = "Multiplication: " + mul;
+        }   
+        function DivNums(){
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+            let div = parseInt(num1) / parseInt(num2);
+            document.getElementById("DivOut").innerHTML = "Division: " + div;
+        }
+
+        function AddOperations()
+        {
+            AddNums();
+            SubNums();
+            MulNums();
+            DivNums();
+        }
+
+        function SquareRoot()
+        {
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+            let sqrt = Math.sqrt(parseInt(num1));
+            document.getElementById("SqrtOut").innerHTML = "Square Root: " + sqrt;
+        }
+    </script>
+</body>
+</html>
