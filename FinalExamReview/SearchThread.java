@@ -1,22 +1,30 @@
 
-public class SearchThread{
+public class SearchThread implements Runnable{
   private static int[] data;
   private static int size;
   private static int targetNumber;
+  private int start, end;
+  private int result = - 1;
+
+  public SearchThread(int start, int end)
+  {
+    this.start = start;
+    this.end = end;
+  }
 
   public static int[] buildArray(int size)
   {
     data = new int[size];
     for(int i = 0; i < size; i++)
     {
-        data[i] = (int) (Math.random() * 1000);
+        data[i] = (int) (Math.random() * 10);
     }
     return data;
   }
 
   public static int linearSearch(int start, int end)
   {
-    for(int i = 0; i < data.length; i++)
+    for(int i = start; i < end; i++)
     {
         if(data[i] == targetNumber)
         {
@@ -26,35 +34,23 @@ public class SearchThread{
     return -1;
   }
 
+  public void run()
+  {
+      result = linearSearch(start, end);
+  }
 
-  static class SearchTask implements Runnable{
-    private int start, end;
-    private int result = - 1;
-
-    public SearchTask(int start, int end)
-    {
-        this.start = start;
-        this.end = end;
-    }
-
-    public void run()
-    {
-        result = linearSearch(start, end);
-    }
-
-    public int getResult()
-    {
-        return result;
-    }
+  public int getResult()
+  {
+      return result;
   }
 
   public static void main(String[] args) {
-    size = 100;
+    size = 10;
     data = buildArray(size);
-    targetNumber = 45;
+    targetNumber = 5;
     int mid = data.length / 2;
 
-    SearchTask searchTask = new SearchTask(0, mid);
+    SearchThread searchTask = new SearchThread(0, mid);
     Thread thread = new Thread(searchTask);
     thread.start();
 
@@ -79,6 +75,19 @@ public class SearchThread{
     }else{
         System.out.println("Target " + targetNumber + " was not found in either thread");
     }
+
+   int comma = 0;
+   System.out.print("Printing Array ");
+   for(int i = 0; i < size; i++)
+   {
+        System.out.print(data[i]);
+        if(comma < size - 1)
+        {
+            comma++;
+            System.out.print(", ");
+        }
+
+   }
   }
 
 }
