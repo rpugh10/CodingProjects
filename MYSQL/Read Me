@@ -1,2 +1,2 @@
 Learning My SQL using SELECT, WHERE, FROM and AS statments. The SELECT statment allows you to select specific columns you want to use and the FROM statement specifies what table you are going to be 
-selecting the data from. The AS statement is used to set a new column name.
+selecting the data from. The AS statement is used to set a new column name. IN statement is pretty much the AND statement.
