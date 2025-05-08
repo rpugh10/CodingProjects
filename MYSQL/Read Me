@@ -5,3 +5,5 @@ IN statement is pretty much the AND statement.
 The BETWEEN statement is used insead of  >= sign. Makes the code look cleaner.
 ORDER BY allows you to sort data using DESC will sort in descending order.
 LIMIT allows you to limit the amount of data returned. (LIMIT 6, 3 will skip the first 6 then return 3).
+JOIN allows you to join to tables together (ex FROM orders JOIN customers).
+ON allows you to set a condition so the results only return items from both tables that satisfy the condidtion. 
