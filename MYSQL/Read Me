@@ -9,3 +9,6 @@ JOIN allows you to join to tables together (ex FROM orders JOIN customers).
 ON allows you to set a condition so the results only return items from both tables that satisfy the condidtion. 
 
 USE allows you to select the database you want to use 
+
+
+LEFT JOIN will select everything from the FROM table regardless if the condidtion is true. RIGHT JOIN will select everything from the JOIN table regardless if the condition is true
