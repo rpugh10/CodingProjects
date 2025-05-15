@@ -1,36 +1,43 @@
 import java.sql.*;
-
+import java.util.*;
 public class JdbcExample {
-    public static void main(String[] args) {
-       
+   public static void main(String[] args)
+   {
         String url = "jdbc:mysql://localhost:3306/myDB";
-        String user = "root";
-        String password = "Hockey#10";
+        String dbUser = "root";
+        String dbPassword = "Hockey#10";
 
-        try {
-            
-            Connection conn = DriverManager.getConnection(url, user, password);
+        Scanner scan = new Scanner(System.in);
 
-           
-            String sql = "SELECT username, password FROM users";
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
+        System.out.println("Enter your username");
+        String username = scan.nextLine();
 
-           
-            while (rs.next()) {
-                String name = rs.getString("username");
-                String email = rs.getString("password");
-                System.out.println(name + " - " + email);
+        System.out.println("Enter your password");
+        String password = scan.nextLine();
+
+        try{
+            Connection conn = DriverManager.getConnection(url, dbUser, dbPassword);
+            System.out.println("Connected to MySQL");
+
+            String sql = "INSERT INTO users (username , password) VALUES (?, ?)";
+            PreparedStatement state = conn.prepareStatement(sql);
+            state.setString(1, username);
+            state.setString(2, password);
+
+            int rowsInserted = state.executeUpdate();
+            if(rowsInserted > 0)
+            {
+                System.out.println("User information stored successfully ");
             }
-
-           
-            rs.close();
-            stmt.close();
             conn.close();
 
-        } catch (SQLException e) {
-            System.out.println("Database error: " + e.getMessage());
+            
+        }catch (SQLException e)
+        {
+            e.printStackTrace();
         }
-    }
+
+        scan.close();
+   }
 }
 
