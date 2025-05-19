@@ -60,4 +60,20 @@ public class StudentDAO {
         }
         return students;
     }
+
+     public boolean updateStudentEmail(int id, String newEmail) throws SQLException
+    {
+        String sql = "UPDATE students SET email = ? WHERE id = ?";
+        try(Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
+        PreparedStatement ps = conn.prepareStatement(sql)){
+        ps.setString(1, newEmail); // Updates the first ? in the sql statement sets the email to the value in the newEmail variable
+        ps.setInt(2, id); // Updates the second ? in the sql statement. Sets the id to the value stored in the id variable that is passed. 
+        int rowsAffected = ps.executeUpdate(); // Use for INSERT UPDATE and DELETE statements 
+
+            if (rowsAffected > 0) {
+                return true;
+            }
+        }
+            return false;
+    }
 }
