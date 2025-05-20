@@ -6,9 +6,8 @@ public class Student {
   private String email;
   private LocalDate enrollmentDate;
 
-  public Student(int id, String firstName, String lastName, String email, LocalDate enrollmentDate)
+  public Student(String firstName, String lastName, String email, LocalDate enrollmentDate)
   {
-    this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
@@ -71,6 +70,6 @@ public class Student {
 
   public String toString()
   {
-    return "Student ID: " + id + "/n" + "First Name: " + firstName + "/n" + "Last Name: " + lastName + "/n" + "Email: " + email + "/n" + "Date enrolled: " + enrollmentDate;
+    return "Student ID: " + id + "\n" + "First Name: " + firstName + "\n" + "Last Name: " + lastName + "\n" + "Email: " + email + "\n" + "Date enrolled: " + enrollmentDate + "\n";
   }
 }

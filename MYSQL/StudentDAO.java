@@ -8,10 +8,10 @@ public class StudentDAO {
     String dbPass = "Hockey#10";
 
     public void addStudent(Student s) throws SQLException{
-        String sql = "INSERT INTO students (first_name, last_name, email. enrollment_date) VALUES(?, ?, ?, ?)";
+        String sql = "INSERT INTO students (first_name, last_name, email, enrollment_date) VALUES(?, ?, ?, ?)";
         try(Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
             PreparedStatement ps = conn.prepareStatement(sql)){
-            
+                
                 ps.setString(1, s.getFName());
                 ps.setString(2, s.getLName());
                 ps.setString(3, s.getEmail());
@@ -31,6 +31,7 @@ public class StudentDAO {
             while(rs.next())
             {
                 Student student = new Student();
+                student.setID(rs.getInt("id"));
                 student.setFName(rs.getString("first_name"));
                 student.setLName(rs.getString("last_name"));
                 student.setEmail(rs.getString("email"));
@@ -43,11 +44,11 @@ public class StudentDAO {
 
     public Student getStudentById(int id) throws SQLException{
         Student students = null;
-        String sql = "SELECT id, first_name, last_name, email, enrollment_data FROM students WHERE id = ?";
+        String sql = "SELECT id, first_name, last_name, email, enrollment_date FROM students WHERE id = ?";
         try(Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
-        PreparedStatement ps = conn.prepareStatement(sql)){
+        PreparedStatement ps = conn.prepareStatement(sql)){ // Use this when inserting , updating , or querying data from the user
             ps.setInt(1, id);
-            ResultSet rs = ps.executeQuery();
+            ResultSet rs = ps.executeQuery(); // Use for SELECT statements 
             if(rs.next())
             {
                 students = new Student();
@@ -61,7 +62,7 @@ public class StudentDAO {
         return students;
     }
 
-     public boolean updateStudentEmail(int id, String newEmail) throws SQLException
+    public boolean updateStudentEmail(int id, String newEmail) throws SQLException
     {
         String sql = "UPDATE students SET email = ? WHERE id = ?";
         try(Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
@@ -75,5 +76,21 @@ public class StudentDAO {
             }
         }
             return false;
+    }
+
+    public boolean deleteStudent(int id)throws SQLException
+    {
+        String sql = "DELETE FROM students WHERE id = ?";
+        try(Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
+        PreparedStatement ps = conn.prepareStatement(sql);){
+            ps.setInt(1, id);
+            int rowsAffected = ps.executeUpdate();
+            if(rowsAffected > 0)
+            {
+                return true;
+            }
+            else
+            return false;
+        }
     }
 }
