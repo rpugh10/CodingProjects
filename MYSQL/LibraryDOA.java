@@ -31,7 +31,7 @@ public class LibraryDOA {
         ResultSet rs = state.executeQuery(sql)){ // No user input so this is a fixed Queries. Use Statement
            while(rs.next()){
             Book book = new Book();
-            book.setBookID(rs.getInt("id"));
+            book.setBookID(rs.getInt("book_id"));
             book.setTitle(rs.getString("title"));
             book.setAuthor(rs.getString("author"));
             book.setYearPublished(rs.getInt("year_published"));
@@ -40,6 +40,66 @@ public class LibraryDOA {
            }
         }
         return b;
+    }
+
+    public Book getBookByID(int book_id)throws SQLException
+    {
+        Book book = null;
+        String sql = "SELECT * FROM books WHERE book_id = ?";
+        try(Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
+        PreparedStatement ps = conn.prepareStatement(sql)){ // ResultSet is used to read data from the database. Used with SELECT statements
+            ps.setInt(1, book_id);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next())
+            {
+                book = new Book();
+                book.setBookID(rs.getInt("book_id"));
+                book.setTitle(rs.getString("title"));
+                book.setAuthor(rs.getString("title"));
+                book.setYearPublished(rs.getInt("year_published"));
+                book.setIsAvailable(rs.getBoolean("available"));
+            }
+        }
+        return book;
+    }
+
+    public boolean updateBookAvailability(int book_id, boolean available)throws SQLException
+    {
+        String sql = "UPDATE books SET available = ? WHERE book_id = ?";
+        try(Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
+        PreparedStatement ps = conn.prepareStatement(sql)){
+            ps.setBoolean(1, available);
+            ps.setInt(2, book_id);
+            int rowsAffected = ps.executeUpdate();
+                if(rowsAffected > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+        }
+    }
+
+    public boolean deleteBook(int book_id)throws SQLException
+    {
+        String sql = "DELETE FROM books WHERE book_id = ?";
+        try(Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
+        PreparedStatement ps = conn.prepareStatement(sql))
+        {
+            ps.setInt(1, book_id);
+            int rowsAffected = ps.executeUpdate();
+
+                if(rowsAffected > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+        }
     }
 
 }

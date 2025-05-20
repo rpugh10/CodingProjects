@@ -16,7 +16,7 @@ public class Book {
     }
 
     public Book(){
-        
+
     }
 
     public void setBookID(int book_id)
@@ -71,6 +71,6 @@ public class Book {
 
     public String toString()
     {
-        return "Book ID: " + book_id + "\n" + "Title: " + title + "\n" + "Author: " + author + "\n" + "Year Published" + yearPublished + "\n" + "Is Available: " + isAvailable + "\n";
+        return "Book ID: " + book_id + "\n" + "Title: " + title + "\n" + "Author: " + author + "\n" + "Year Published " + yearPublished + "\n" + "Is Available: " + isAvailable + "\n";
     }
 }
