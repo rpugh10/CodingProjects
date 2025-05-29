@@ -8,7 +8,7 @@ import jpa.example.model.Department;
 import jpa.example.model.Employee;
 public class MainEmployeeDepartment {
     
-    public static void Main(String[] args)
+    public static void main(String[] args)
     {
         Scanner scan = new Scanner(System.in);
         DepartmentDao deptDAO = new DepartmentDao();
@@ -43,17 +43,21 @@ public class MainEmployeeDepartment {
                 BigDecimal salary = scan.nextBigDecimal();
                 scan.nextLine();
                 Employee em = new Employee(fName, lName, salary);
-                emDAO.save(em);
+                System.out.println("Enter department to put employee: ");
+                String name = scan.nextLine();
+                Department department = new Department(name);
+                deptDAO.addEmployeeToDepartment(department, em);
             }
             else if(input == 3)
             {
-                System.out.println("Enter department to display: ");
-                String name = scan.nextLine();
-                Department fetched = deptDAO.findByName(name);
+                System.out.println("Enter department id: ");
+                Long id = scan.nextLong();
+                scan.nextLine();
+                Department fetched = deptDAO.findDepartmentWithEmployees(id);
 
                 if(fetched != null)
                 {
-                    System.out.println("Employees in department " + name);
+                    System.out.println("Employees in department " + id);
                     for(Employee e: fetched.getEmployees()){
                         System.out.println(e.getFName() + " " +  e.getLName() + "\n");
                     }
@@ -63,6 +67,74 @@ public class MainEmployeeDepartment {
                 }
                 
             }
+            else if(input == 4)
+            {
+                System.out.println("Enter salary: ");
+                BigDecimal salary = scan.nextBigDecimal();
+                scan.nextLine();
+
+                List<Employee> em = emDAO.findSalaryGreaterThan(salary);
+
+               if(em.isEmpty())
+               {
+                    System.out.println("No employees found with a salary greater than " + salary);
+               }
+               else{
+                    System.out.println("Employees with a salary greater than: " + salary);
+                    for(Employee e: em)
+                    {
+                        System.out.println(e.getFName() + " " + e.getLName() + " " + e.getSalary());
+                    }
+               }
+            }
+
+            else if(input == 5)
+            {
+                System.out.println("Enter employee id to update employee: ");
+                Long id = scan.nextLong();
+                scan.nextLine();
+                Employee em = emDAO.findById(id);
+                if(em != null)
+                {
+                    System.out.println("Enter new first name: ");
+                    String fName = scan.nextLine();
+                    System.out.println("Enter new last name: ");
+                    String lName = scan.nextLine();
+                    System.out.println("Enter new salary: ");
+                    BigDecimal salary = scan.nextBigDecimal();
+                    scan.nextLine();
+                    em.setFName(fName);
+                    em.setLName(lName);
+                    em.setSalary(salary);
+
+                    emDAO.update(em);
+                    System.out.println("Employee updated");
+                }
+                else{
+                    System.out.println("Employee not found");
+                }
+            }
+            else if(input == 6)
+            {
+                System.out.println("Enter employee id to delete employee: ");
+                Long id = scan.nextLong();
+                scan.nextLine();
+                Employee em = emDAO.findById(id);
+
+                if(em != null)
+                {
+                    emDAO.delete(em);
+                    System.out.println("Employee deleted");
+                }
+                else{
+                    System.out.println("Employee not found");
+                }
+            }
+            else{
+                System.out.println("Exiting");
+                break;
+            }
         }
+        scan.close();
     }
 }
