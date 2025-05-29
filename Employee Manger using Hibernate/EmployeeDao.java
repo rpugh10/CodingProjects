@@ -35,7 +35,7 @@ public class EmployeeDao {
     {
         EntityManager em = JPAUtil.getEntityManager();
         try{
-            TypedQuery<Employee> query = em.createQuery("SELECT e FROM Employee e", Employee.class);
+            TypedQuery<Employee> query = em.createQuery("SELECT e FROM Employee e JOIN FETCH e.department", Employee.class);
             return query.getResultList();
         }finally{
             em.close();
@@ -71,7 +71,7 @@ public class EmployeeDao {
     {
         EntityManager em = JPAUtil.getEntityManager();
         try{ // Use :min that tells hibernate I will give you a value for min in the runtime
-            TypedQuery<Employee> query = em.createQuery("SELECT e FROM Employees e WHERE e.salary > :min", Employee.class);
+            TypedQuery<Employee> query = em.createQuery("SELECT e FROM Employee e WHERE e.salary > :min", Employee.class);
             query.setParameter("min", min); //Sets the actual value for the named parameter in the query
             return query.getResultList();
         }finally{

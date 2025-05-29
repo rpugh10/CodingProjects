@@ -5,6 +5,8 @@ import jakarta.persistence.TypedQuery;
 import jpa.example.model.Department;
 import jpa.example.util.JPAUtil; 
 import java.util.*;
+import jpa.example.model.Employee; 
+
 
 public class DepartmentDao {
 
@@ -20,11 +22,14 @@ public class DepartmentDao {
             }
     }
 
-    public Department findById(Long id){
+    public Department findDepartmentWithEmployees(Long id) {
         EntityManager em = JPAUtil.getEntityManager();
-        try{
-            return em.find(Department.class, id); //find is a method the retrieves an entity by its class and primary key
-        }finally{
+        try {
+            TypedQuery<Department> query = em.createQuery(
+                "SELECT d FROM Department d JOIN FETCH d.employees WHERE d.id = :id", Department.class);
+            query.setParameter("id", id);
+            return query.getSingleResult();
+        } finally {
             em.close();
         }
     }
@@ -78,5 +83,17 @@ public class DepartmentDao {
         }
     }
 
-    
+    public void addEmployeeToDepartment(Department d, Employee e)
+    {
+        EntityManager em =JPAUtil.getEntityManager();
+        try{
+            em.getTransaction().begin();
+            Department mDepartment = em.merge(d);
+            mDepartment.addEmployee(e);
+            em.persist(e);
+            em.getTransaction().commit();
+        }finally{
+            em.close();
+        }
+    }
 }
