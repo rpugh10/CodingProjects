@@ -22,6 +22,15 @@ public class DepartmentDao {
             }
     }
 
+    public Department findById(Long id) {
+        EntityManager em = JPAUtil.getEntityManager();
+        try {
+            return em.find(Department.class, id);
+        } finally {
+            em.close();
+        }
+    }
+
     public Department findDepartmentWithEmployees(Long id) {
         EntityManager em = JPAUtil.getEntityManager();
         try {
