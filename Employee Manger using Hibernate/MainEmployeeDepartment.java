@@ -43,10 +43,17 @@ public class MainEmployeeDepartment {
                 BigDecimal salary = scan.nextBigDecimal();
                 scan.nextLine();
                 Employee em = new Employee(fName, lName, salary);
-                System.out.println("Enter department to put employee: ");
-                String name = scan.nextLine();
-                Department department = new Department(name);
-                deptDAO.addEmployeeToDepartment(department, em);
+                System.out.println("Enter department id to put employee in ");
+                Long id = scan.nextLong();
+                scan.nextLine();
+                Department department = deptDAO.findById(id);
+                if(department != null)
+                {
+                    deptDAO.addEmployeeToDepartment(department, em);
+                }
+                else{
+                    System.out.println("Department not found");
+                }
             }
             else if(input == 3)
             {
