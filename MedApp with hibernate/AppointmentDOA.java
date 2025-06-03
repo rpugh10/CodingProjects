@@ -3,8 +3,11 @@ import com.example.util.JpaUtil;
 import com.example.model.Patient;
 import com.example.model.Doctor;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
+
 import java.time.LocalDate;
 import com.example.model.Appointment;
+import java.util.*;
 public class AppointmentDOA {
 
     public void bookAppointment(LocalDate date, int patientId, int doctorId)
@@ -56,6 +59,19 @@ public class AppointmentDOA {
            em.getTransaction().commit();
         }finally
         {
+            em.close();
+        }
+    }
+
+    public List<Appointment> getAppointmentsByDoctor(int doctorId)
+    {
+        EntityManager em = JpaUtil.getEmf();
+        try{
+            em.getTransaction().begin();
+            TypedQuery<Appointment> query = em.createQuery("SELECT e FROM Appointment e WHERE e.doctor.id =:doctorId", Appointment.class);
+            query.setParameter("doctorId", doctorId);
+            return query.getResultList();
+        }finally{
             em.close();
         }
     }
